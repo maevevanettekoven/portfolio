@@ -2,12 +2,15 @@
   const root = document.documentElement;
   const btn  = document.getElementById('theme-toggle');
 
+  const faviconEl = document.querySelector('link[rel="icon"]');
+
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
     btn.setAttribute('aria-label',
       theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'
     );
     localStorage.setItem('theme', theme);
+    if (faviconEl) faviconEl.href = theme === 'dark' ? 'favicon-dark.svg' : 'favicon.svg';
   }
 
   // Resolve initial theme: stored preference → OS preference → light
