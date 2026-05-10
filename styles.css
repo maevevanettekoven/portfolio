@@ -1,0 +1,476 @@
+/*
+  Maeve Van Ettekoven — Portfolio
+  ================================
+  Colour palette:
+    --white:   #F5F2EE  (warm off-white — softer than pure white, easier on the eye)
+    --black:   #1A1A1A  (near-black — less aggressive than #000)
+    --accent:  #C1440E  (burnt sienna — earthy, confident, fits brand strategy work
+                         without screaming "creative agency". Has warmth without being
+                         saccharine.)
+    --muted:   #6B6460  (for metadata, captions, secondary text)
+
+  Typography:
+    Syne — used for the name/wordmark and all display headings. Bold, geometric,
+    slightly rounded terminals. Confident without being aggressive. At 700–800
+    weight it has real presence on the page without needing size to do the work.
+    Plus Jakarta Sans — paired for body and UI. Rounder and friendlier than DM
+    Sans, with a humanist warmth that softens Syne's geometry. Together they push
+    the site from spare/intellectual toward warm/confident — still minimal, but
+    with actual personality.
+*/
+
+/* ─── Tokens ────────────────────────────────────────────────────────────── */
+:root {
+  --white:   #F5F2EE;
+  --black:   #1A1A1A;
+  --accent:  #C1440E;
+  --muted:   #6B6460;
+  --border:  #E0DDD9;
+
+  --space-xs: 0.5rem;
+  --space-s:  1rem;
+  --space-m:  2rem;
+  --space-l:  4rem;
+  --space-xl: 8rem;
+
+  --max-w:        1200px;
+  --body-max-w:   680px;
+  --nav-h:        72px;
+
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ─── Dark mode tokens ───────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --white:  #141210;
+  --black:  #F0EDE8;
+  --muted:  #8A8480;
+  --border: #2C2926;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ─── Nav ────────────────────────────────────────────────────────────────── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav .wordmark {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  transition: color 0.2s var(--ease);
+}
+
+.site-nav .wordmark:hover {
+  color: var(--accent);
+}
+
+.site-nav .wordmark img {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
+/* ─── Theme toggle ───────────────────────────────────────────────────────── */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: color 0.2s var(--ease);
+}
+
+.theme-toggle:hover { color: var(--accent); }
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* Show the right icon per theme */
+.icon-sun  { display: none; }
+.icon-moon { display: block; }
+
+[data-theme="dark"] .icon-sun  { display: block; }
+[data-theme="dark"] .icon-moon { display: none; }
+
+/* ─── Container ──────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: var(--space-m);
+}
+
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+.hero {
+  padding-block: var(--space-xl) var(--space-l);
+  border-bottom: 1px solid var(--border);
+}
+
+.hero__name {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 700;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-m);
+}
+
+.hero__footnote {
+  font-size: 0.75em;
+  opacity: 0.6;
+}
+
+.hero__line {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 640px;
+  line-height: 1.8;
+}
+
+/* ─── Work grid ──────────────────────────────────────────────────────────── */
+.work {
+  padding-block: var(--space-l);
+}
+
+.work__label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: var(--space-m);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-m);
+}
+
+/* ─── Work item ──────────────────────────────────────────────────────────── */
+.work-item {
+  display: block;
+  cursor: pointer;
+}
+
+.work-item__thumb {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--border);
+  margin-bottom: var(--space-xs);
+}
+
+.work-item__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease);
+}
+
+/* Accent overlay on hover */
+.work-item__thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .work-item:hover .work-item__thumb img {
+    transform: scale(1.03);
+  }
+  .work-item:hover .work-item__thumb::after {
+    opacity: 0.12;
+  }
+}
+
+.work-item__meta {
+  padding-top: var(--space-xs);
+}
+
+.work-item__client {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.work-item__type {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Focus state for accessibility */
+.work-item:focus-visible .work-item__thumb {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ─── Footer ─────────────────────────────────────────────────────────────── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: var(--space-m);
+  margin-top: var(--space-l);
+}
+
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+}
+
+.site-footer__copy {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.site-footer__contact {
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-bottom: 1px solid currentColor;
+  transition: color 0.2s var(--ease);
+}
+
+.site-footer__contact:hover {
+  color: var(--accent);
+}
+
+/* ─── Case study ─────────────────────────────────────────────────────────── */
+.cs-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding-block: var(--space-m);
+  transition: color 0.2s var(--ease);
+}
+
+.cs-back:hover { color: var(--accent); }
+
+.cs-back:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.cs-header {
+  padding-bottom: var(--space-l);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--space-l);
+}
+
+.cs-header__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-m);
+}
+
+.cs-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-s);
+  align-items: center;
+}
+
+.cs-meta__item {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cs-meta__sep {
+  color: var(--border);
+  user-select: none;
+}
+
+.cs-hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 7;
+  object-fit: cover;
+  margin-bottom: var(--space-l);
+}
+
+/* ─── Case study body ────────────────────────────────────────────────────── */
+.cs-body {
+  max-width: var(--body-max-w);
+  margin-bottom: var(--space-xl);
+}
+
+.cs-body h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-s);
+  color: var(--black);
+}
+
+.cs-body p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--black);
+  margin-bottom: var(--space-s);
+}
+
+.cs-body figure {
+  margin-block: var(--space-l);
+}
+
+.cs-body figure img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.cs-text-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  border-bottom: 1px solid currentColor;
+  transition: opacity 0.2s var(--ease);
+}
+
+.cs-text-link:hover { opacity: 0.7; }
+
+.cs-body figcaption {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: var(--space-xs);
+}
+
+.figure-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-s);
+  margin-block: var(--space-l);
+}
+
+.figure-pair figure {
+  margin-block: 0;
+}
+
+.figure-pair figure img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .figure-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  :root {
+    --space-l:  2.5rem;
+    --space-xl: 4rem;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-block: var(--space-l) var(--space-m);
+  }
+
+  .site-nav .wordmark {
+    font-size: 1.1rem;
+  }
+
+  .cs-body {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --space-xl: 6rem;
+  }
+}
+
+/* ─── Focus visible global ───────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}

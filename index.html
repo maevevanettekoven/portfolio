@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maeve — Brand Strategist</title>
+  <meta name="description" content="Maeve Van Ettekoven is a brand strategist based in the Netherlands.">
+  <!-- Runs synchronously to set theme before first paint — prevents flash -->
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .work-grid {
+      gap: 3rem 2.5rem;
+    }
+    .work-item__thumb {
+      aspect-ratio: 16 / 10;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav" aria-label="Site navigation">
+    <div class="container">
+      <a href="index.html" class="wordmark" aria-label="Home">
+        <img src="favicon.svg" alt="Home">
+      </a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+        <!-- Moon: shown in light mode to offer dark mode -->
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <!-- Sun: shown in dark mode to offer light mode -->
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" aria-labelledby="hero-name">
+      <div class="container">
+        <h1 class="hero__name" id="hero-name">Maeve</h1>
+        <p class="hero__line">Brand strategist and cultural sponge. Tells strategy stories that spark groovy ideas by day. Makes questionable pottery and even more questionable bass lines by night.<br><span class="hero__footnote">Currently @ DEPT</span></p>
+      </div>
+    </section>
+
+    <section class="work" aria-labelledby="work-label">
+      <div class="container">
+        <p class="work__label" id="work-label">Selected work</p>
+
+        <div class="work-grid" role="list">
+
+          <a class="work-item" href="case-study.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="3Carousel_2.png.webp"
+                alt="R.O.A.D. — Reclaiming Our Atlantic Destiny, Government of Barbados"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">R.O.A.D.</p>
+              <p class="work-item__type">Brand strategy</p>
+            </div>
+          </a>
+
+          <a class="work-item" href="case-study-lumea.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="Screenshot 2026-05-10 at 14.18.40.png"
+                alt="Philips Lumea — Campaign Strategy"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">Philips Lumea</p>
+              <p class="work-item__type">Campaign strategy</p>
+            </div>
+          </a>
+
+          <a class="work-item" href="case-study-artis.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="Screenshot 2026-05-10 at 13.46.54.png"
+                alt="ARTIS — Brand Strategy"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">ARTIS</p>
+              <p class="work-item__type">Brand strategy for digital</p>
+            </div>
+          </a>
+
+          <a class="work-item" href="case-study-skyteam.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="3697b1dc-ba81-4e8c-a852-3b374e48b9ad_rw_1920.jpg"
+                alt="SkyTeam — Brand & Campaign Strategy"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">SkyTeam</p>
+              <p class="work-item__type">Brand & campaign strategy</p>
+            </div>
+          </a>
+
+          <a class="work-item" href="case-study-nsj.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="Screenshot-2022-10-28-at-16.06.18.png"
+                alt="North Sea Jazz — Communication Strategy"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">North Sea Jazz</p>
+              <p class="work-item__type">Communication strategy</p>
+            </div>
+          </a>
+
+          <a class="work-item" href="case-study-oneblade.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="Screenshot 2026-05-10 at 16.35.34.png"
+                alt="Philips OneBlade — Campaign Strategy"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">Philips OneBlade</p>
+              <p class="work-item__type">Campaign strategy</p>
+            </div>
+          </a>
+
+          <a class="work-item" href="case-study-bol-christmas.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="bol kerstreclame.webp"
+                alt="Bol — Campaign Strategy"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">Bol</p>
+              <p class="work-item__type">Campaign strategy</p>
+            </div>
+          </a>
+
+          <a class="work-item" href="case-study-mauritshuis.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="meisje.webp"
+                alt="Mauritshuis — Campaign Strategy"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">Mauritshuis</p>
+              <p class="work-item__type">Campaign strategy</p>
+            </div>
+          </a>
+
+          <a class="work-item" href="case-study-multigroomer.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="6010ec3d-7864-4c8e-818a-9cd3819158ee_rw_3840.png"
+                alt="Philips Multigroomer — Campaign Strategy"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">Philips Multigroomer</p>
+              <p class="work-item__type">Campaign strategy</p>
+            </div>
+          </a>
+
+          <a class="work-item" href="case-study-haibike.html" role="listitem">
+            <div class="work-item__thumb">
+              <img
+                src="Screenshot 2026-05-10 at 18.29.34.png"
+                alt="Haibike — Campaign Strategy"
+                loading="lazy"
+              >
+            </div>
+            <div class="work-item__meta">
+              <p class="work-item__client">Haibike</p>
+              <p class="work-item__type">Campaign strategy</p>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__copy">&copy; 2024 Maeve Van Ettekoven</p>
+      <a class="site-footer__contact" href="https://www.linkedin.com/in/maevevanettekoven/" target="_blank" rel="noopener noreferrer">Get in touch</a>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+</body>
+</html>

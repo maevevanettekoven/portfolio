@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    Four-pointed star / sparkle. Each arm is a quadratic bezier from tip to tip.
+    Control points at (58,42), (58,58), (42,58), (42,42) sit close to centre,
+    pulling the sides of each arm inward to create the concave "pinch".
+    Vertical tips at y=2/y=98, horizontal at x=5/x=95 — vertical axis is
+    ~6% longer, which gives elegance without looking lopsided at small sizes.
+  -->
+  <path
+    d="M50 2 Q58 42 95 50 Q58 58 50 98 Q42 58 5 50 Q42 42 50 2Z"
+    fill="#C1440E"
+  />
+</svg>
