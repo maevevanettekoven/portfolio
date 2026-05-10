@@ -4,7 +4,7 @@
   Colour palette:
     --white:   #F5F2EE  (warm off-white — softer than pure white, easier on the eye)
     --black:   #1A1A1A  (near-black — less aggressive than #000)
-    --accent:  #C1440E  (burnt sienna — earthy, confident, fits brand strategy work
+    --accent:  #1c3c35  (burnt sienna — earthy, confident, fits brand strategy work
                          without screaming "creative agency". Has warmth without being
                          saccharine.)
     --muted:   #6B6460  (for metadata, captions, secondary text)
@@ -23,7 +23,7 @@
 :root {
   --white:   #F5F2EE;
   --black:   #1A1A1A;
-  --accent:  #C1440E;
+  --accent:  #1c3c35;
   --muted:   #6B6460;
   --border:  #E0DDD9;
 
