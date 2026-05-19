@@ -1,15 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <!--
-    Vinyl record. Four concentric circles via evenodd fill rule:
-    r=47 outer disc → r=30 start transparent groove ring → r=20 end groove ring
-    → r=6 transparent spindle hole. Odd-count regions = dark green, even = transparent.
+    Vinyl record via evenodd. Four circles, inside-out:
+    r=47 (full disc) → r=20 (groove outer edge) → r=16 (groove inner edge) → r=4 (spindle hole)
+    Odd-count regions = #1c3c35, even-count = transparent.
+    Outer green rim = 27 units, groove = 4 units, inner label = 12 units, hole = r4.
   -->
   <path
     fill-rule="evenodd"
     fill="#1c3c35"
     d="M3,50 A47,47 0 1,1 97,50 A47,47 0 1,1 3,50Z
-       M20,50 A30,30 0 1,1 80,50 A30,30 0 1,1 20,50Z
        M30,50 A20,20 0 1,1 70,50 A20,20 0 1,1 30,50Z
-       M44,50 A6,6 0 1,1 56,50 A6,6 0 1,1 44,50Z"
+       M34,50 A16,16 0 1,1 66,50 A16,16 0 1,1 34,50Z
+       M46,50 A4,4 0 1,1 54,50 A4,4 0 1,1 46,50Z"
   />
 </svg>
