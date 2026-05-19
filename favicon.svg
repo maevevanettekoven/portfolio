@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!--
-    Four-pointed star / sparkle. Each arm is a quadratic bezier from tip to tip.
-    Control points at (58,42), (58,58), (42,58), (42,42) sit close to centre,
-    pulling the sides of each arm inward to create the concave "pinch".
-    Vertical tips at y=2/y=98, horizontal at x=5/x=95 — vertical axis is
-    ~6% longer, which gives elegance without looking lopsided at small sizes.
-  -->
+  <!-- Outer disc with label area cut out (evenodd) -->
   <path
-    d="M50 2 Q58 42 95 50 Q58 58 50 98 Q42 58 5 50 Q42 42 50 2Z"
+    fill-rule="evenodd"
+    d="M3,50 A47,47 0 1,1 97,50 A47,47 0 1,1 3,50Z M30,50 A20,20 0 1,1 70,50 A20,20 0 1,1 30,50Z"
     fill="#1c3c35"
   />
+  <!-- Label ring outline -->
+  <circle cx="50" cy="50" r="20" fill="none" stroke="#1c3c35" stroke-width="2"/>
+  <!-- Centre spindle dot -->
+  <circle cx="50" cy="50" r="5" fill="#1c3c35"/>
 </svg>
